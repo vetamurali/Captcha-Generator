@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple interactive CAPTCHA generator built with HTML, CSS and JavaScript.">
+  <title>CAPTCHA Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CAPTCHA Generator home">
+      <span class="brand-icon" aria-hidden="true">⬟</span>
+      <span>CAPTCHA Generator</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="shield" aria-hidden="true">🔒</div>
+      <p class="eyebrow">Simple • Interactive • Lightweight</p>
+      <h1>CAPTCHA Generator</h1>
+      <p class="subtitle">Generate a random CAPTCHA and verify that you entered it correctly.</p>
+
+      <section class="captcha-card" aria-labelledby="captcha-title">
+        <div class="card-heading">
+          <h2 id="captcha-title">Generated CAPTCHA</h2>
+          <span class="status-dot" aria-hidden="true"></span>
+        </div>
+
+        <div class="captcha-row">
+          <canvas id="captcha-canvas" width="560" height="130"
+            role="img" aria-label="CAPTCHA image. Use the refresh button to generate a new challenge."></canvas>
+          <button class="refresh-button" id="refresh-button" type="button" aria-label="Generate a new CAPTCHA">
+            <span class="refresh-icon" aria-hidden="true">↻</span>
+            <span>Refresh</span>
+          </button>
+        </div>
+
+        <form id="captcha-form" novalidate>
+          <label for="captcha-input">Enter the characters</label>
+          <input id="captcha-input" name="captcha" type="text" placeholder="Type the CAPTCHA here..."
+            autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="8" required>
+          <button class="verify-button" type="submit">✓ &nbsp; Verify CAPTCHA</button>
+          <p class="message" id="message" role="status" aria-live="polite"></p>
+        </form>
+        <p class="hint">Tip: The CAPTCHA is case-insensitive. Refresh it if the characters are hard to read.</p>
+      </section>
+    </section>
+
+    <section class="features" id="about" aria-label="Project features">
+      <article class="feature">
+        <div class="feature-icon purple">⬡</div>
+        <h3>Simple to Use</h3>
+        <p>Generate and verify a challenge in a few clicks.</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon green">⚙</div>
+        <h3>Customizable</h3>
+        <p>Random characters, lines and visual noise.</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon blue">ϟ</div>
+        <h3>Fast</h3>
+        <p>Runs directly in your browser without a server.</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon pink">&lt;/&gt;</div>
+        <h3>Easy to Understand</h3>
+        <p>Built with HTML, CSS and vanilla JavaScript.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>CAPTCHA Generator · Mini Project</p>
+    <p>Built with HTML, CSS and JavaScript</p>
+  </footer>
+</body>
+</html>
